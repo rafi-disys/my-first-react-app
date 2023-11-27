@@ -3,15 +3,11 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 
-function ListItem(props) {
-  return <li>{props.animal}</li>
-}
-
 function List(props) {
   return (
     <ul>
       {props.animals.map((animal) => {
-        return <ListItem key={animal} animal={animal} />;
+        return animal.startsWith("L") && <li key={animal}>{animal}</li>;
       })}
     </ul>
   );
@@ -27,5 +23,4 @@ function App() {
     </div>
   );
 }
-
 export default App
